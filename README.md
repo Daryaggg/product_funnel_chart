@@ -1,12 +1,11 @@
-# Customized charts for Lamoda needs
-Just add .py file to your Lib directory and use charts
+# Product funnel chart
 
 ## 1. Funnel Chart 
 ### Arguments:
-- *values* - list of funnel values (number of users on each funnel step)
-- *labels* - list of chart labels for values (default is "<value> / <percent of first value>")
-- *phases* - list of funnel step headers
-- *chart_title* - string of chart title
-- *shuffle_colors* - boolean shuffle or use first of 20 tablue colors (default False)
-- *title_size* - int title font size (default 20)
-- *font_size* - int labels and phases font size (default 14)
+- *values* - numbers (of users)
+- *phases* - name of the step
+- *labels* - values displayed on chart
+- *colors* - colors of your chart, by default - tableu chart colors
+- *shuffle_colors* - if you want to see random colors
+- *title_size* - set title size
+- *font_size* - set labels font size
