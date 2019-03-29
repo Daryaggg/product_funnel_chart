@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 
 import plotly
 import plotly.offline as py
@@ -8,34 +7,32 @@ import plotly.tools as tls
 import colorlover as cl
 plotly.offline.init_notebook_mode()
 
-def funnel_chart(values, phases, chart_title, labels=None, shuffle_colors=False,
-                 title_size=20, font_size=14):
+from product_funnel_chart.chart.config import tableau20_colors
+
+def funnel_chart(values, phases, chart_title, labels=None, colors=tableau20_colors,
+                 shuffle_colors=False, title_size=20, font_size=14):
     '''
     Tool to create a nice funnel chart.
 
     values - numbers (of users)
-    labels - values displayed on chart
     phases - name of the step
+    labels - values displayed on chart
+    colors - colors of your chart, by default - tableu chart colors
+    shuffle_colors - if you want to see random colors
+    title_size - set title size
+    font_size - set labels font size
 
     --
     code source = https://plot.ly/python/funnel-charts/
-    '''
 
+    '''
     if labels is None:
         first_value = values[0]
         labels = [str(value) + ' / '
                   + str(round(value/values[0]*100, 1)) + '%'
                   for value in values]
 
-    tableau20 = [(31, 119, 180), (174, 199, 232), (255, 127, 14), (255, 187, 120),
-             (44, 160, 44), (152, 223, 138), (214, 39, 40), (255, 152, 150),
-             (148, 103, 189), (197, 176, 213), (140, 86, 75), (196, 156, 148),
-             (227, 119, 194), (247, 182, 210), (127, 127, 127), (199, 199, 199),
-             (188, 189, 34), (219, 219, 141), (23, 190, 207), (158, 218, 229)]
-
     # color of each funnel section
-    colors = ['rgb' + str(x) for x in tableau20]
-
     n_phase = len(phases)
     if shuffle_colors:
         colors = np.random.choice(colors, size=n_phase, replace=False)
