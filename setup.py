@@ -19,7 +19,7 @@ except FileNotFoundError:
 
 setup(
     name="product_funnel_chart",
-    version="0.0.1",
+    version="0.0.2",
     author="Darya Guselnikova",
     description="Makes a nice chart of a user funnel based on Plotly",
     long_description=readme,
