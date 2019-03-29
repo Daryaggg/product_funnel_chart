@@ -7,7 +7,7 @@ import plotly.tools as tls
 import colorlover as cl
 plotly.offline.init_notebook_mode()
 
-from product_funnel_chart.chart.config import tableau20_colors
+from product_funnel_chart.config import tableau20_colors
 
 def funnel_chart(values, phases, chart_title, labels=None, colors=tableau20_colors,
                  shuffle_colors=False, title_size=20, font_size=14):
